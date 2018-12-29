@@ -1,0 +1,14 @@
+.login {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_form {
+    margin-bottom: 90px !important;
+}
+
+.login_submit {
+    margin-top: 30px !important;
+}
