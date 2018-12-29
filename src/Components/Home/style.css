@@ -1,0 +1,55 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    background: url('../../images/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    line-height: 1px;
+}
+
+.home_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 700px;
+}
+
+.home_info p:first-of-type {
+    font-size: 24pt;
+}
+
+.home_buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+}
+
+.home_button {
+    border: 1px solid white;
+    border-radius: 20px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: Transparent;
+    cursor:pointer;
+    line-height: 10px;
+}
+
+.home_button:hover {
+    color: black;
+    border: 1px solid black;
+}
