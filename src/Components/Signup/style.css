@@ -1,0 +1,143 @@
+.signup {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup_card {
+    background-color: #696e83;
+    width: 400px;
+    height: 600px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup_card:after {
+ 	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: #696e83;
+	border-top: 0;
+	margin-left: -10px;
+	margin-top: -10px;
+}
+
+.signup_card_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;   
+    width: 100%;
+    margin-top: 20px;
+}
+
+.signup_card_logo img {
+    height: 200px;
+}
+
+.signup_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.signup_form input {
+    margin-top: 2px;
+}
+
+.input_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: none;
+    color: #e5e6ec;
+}
+
+.input_container input[type="text"], input[type="password"] {
+    background-color: rgba(209,217,255,.1);
+    outline: 0;
+    border-radius: 10px;
+    padding: 18px;
+    width: 70%;
+    color: #fff;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    height: 60px;
+    font-family: Raleway,sans-serif;
+}
+
+.input_container svg {
+    color: white;
+    position: absolute;
+    left: 20% !important;
+}
+
+.input_container label {
+    position: absolute;
+    left: 35%;
+    transition: all .3s;
+    pointer-events: none;
+}
+
+.input_container input[type="text"], input[type="password"] 
+{
+    padding-left: 17%;
+}
+
+.input_container input:focus + label {
+    top: 10%;
+    left: 28%;
+    background: transparent;
+    transform: scale(.7);
+    color:rgb(177, 177, 177);
+}
+
+.input_container input:valid + label {
+    top: 10%;
+    left: 28%;
+    background: transparent;
+    transform: scale(.7);
+    color: rgb(177, 177, 177);
+}
+
+.signup_submit {
+    background: #5DD572;
+    border-color: #5DD572;
+        border: 2px solid #686C80;
+    font-weight: 700;
+    color: #fff;
+    padding: 20px 30px 18px;
+    border-radius: 50px;
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    margin-top: 15px !important;
+    width: 70%;
+}
+
+.signup_submit:hover {
+    box-shadow: 0 0 40px rgba(0,0,0,.1);
+}
+
+.css-10nd86i {
+    margin-top: 20px;
+    width: 70%;
+}
