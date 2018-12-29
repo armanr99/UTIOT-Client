@@ -9,7 +9,7 @@ export default class Login extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        groupName: '',
+        name: '',
         password: ''
       }
       this.handleChange = this.handleChange.bind(this);
@@ -37,12 +37,12 @@ export default class Login extends React.Component {
               <div className="input_container" >
                   <FontAwesomeIcon icon={faUser} />
                   <input
-                    name="groupName"
-                    value={this.state.groupName}
+                    name="name"
+                    value={this.state.name}
                     onChange={this.handleChange}
-                    type="text" id="groupName" 
+                    type="text" id="name" 
                     required />
-                  <label for="groupName">Group Name</label>
+                  <label for="name">Group Name</label>
               </div>
               <div className="input_container" >
                   <FontAwesomeIcon icon={faKey} />
