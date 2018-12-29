@@ -2,8 +2,9 @@ import React from 'react';
 import './style.css';
 import logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faKey, faUser, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { Creatable } from 'react-select';
+import { toast } from 'react-toastify';
 
 export default class Signup extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class Signup extends React.Component {
     this.state = {
       name : '', 
       password : '', 
+      thingspeak: '',
       members: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -34,9 +36,25 @@ export default class Signup extends React.Component {
 
   handleSubmit (event) {
     event.preventDefault();
-    let ob = this.state;
-    let obj = JSON.stringify(ob);
-    console.log(obj);
+    const data = this.state;
+
+    fetch('/api/group/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(response) {
+      if(!response.ok) {
+        toast.error('Signup unsuccessful!');
+        throw new Error('signup failed'); //what about a error managing system?!
+      }
+      else {
+        toast.success('Signup successful!')
+      }
+    })
+    .catch(function (err) {
+      console.log(err)
+    })
   }
   
   render() {
@@ -69,6 +87,17 @@ export default class Signup extends React.Component {
                     id="password" 
                     required />
                   <label for="password">Password</label>
+              </div>
+              <div className="input_container" >
+                  <FontAwesomeIcon icon={faLaptop} />
+                  <input
+                    name="thingspeak"
+                    value={this.state.thingspeak}
+                    onChange={this.handleChange}
+                    type="text"
+                    id="thingspeak" 
+                    required />
+                  <label for="thingspeak">Thingspeak</label>
               </div>
               <Creatable
                 options = {this.state.members}
