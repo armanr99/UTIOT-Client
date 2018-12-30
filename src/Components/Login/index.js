@@ -4,8 +4,15 @@ import logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
 import { toast } from 'react-toastify';
+import { connect } from 'react-redux';
 
-export default class Login extends React.Component {
+function mapStateToProps (state) {
+  return {
+    authenticated: state.authenticated,
+  };
+}
+
+class Login extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -29,6 +36,7 @@ export default class Login extends React.Component {
     handleSubmit (event) {
       event.preventDefault();
       const data = this.state;
+      let self = this;
   
       fetch('/api/group/login', {
         method: 'POST',
@@ -47,7 +55,9 @@ export default class Login extends React.Component {
       })
       .then(function(responseJson) {
         let token = responseJson.data.token;
-        localStorage.setItem(token, token);
+        localStorage.setItem('token', token);
+      }).then(function() {
+        self.props.dispatch({ type: 'AUTHENTICATE_THE_USER' });
       })
       .catch(function (err) {
         console.log(err)
@@ -91,3 +101,5 @@ export default class Login extends React.Component {
       )
     }
   }
+
+  export default connect(mapStateToProps)(Login);
