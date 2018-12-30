@@ -3,7 +3,7 @@ import './style.css';
 import logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
-import { Creatable   } from 'react-select';
+import { toast } from 'react-toastify';
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ export default class Login extends React.Component {
         password: ''
       }
       this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange (event) {
@@ -24,11 +25,39 @@ export default class Login extends React.Component {
           [name]: value
       });
     }
+
+    handleSubmit (event) {
+      event.preventDefault();
+      const data = this.state;
+  
+      fetch('/api/group/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) {
+        if(!response.ok) {
+          toast.error('Wrong username or password!');
+          throw new Error('login failed'); //what about a error managing system?!
+        }
+        else {
+          toast.success('Login successful!')
+          return response.json();
+        }
+      })
+      .then(function(responseJson) {
+        let token = responseJson.data.token;
+        localStorage.setItem(token, token);
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+    }
     render() {
       return ( 
       <div className="login">
         <div className="signup_card">
-          <div className="signup_card_logo">
+          <div className="signup_card_logo login_card_logo">
             <a href="/">
               <img src={logo} alt="logo"/>
             </a>
