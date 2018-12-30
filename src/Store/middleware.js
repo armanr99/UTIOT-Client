@@ -10,6 +10,7 @@ export const auth = store => next => action => {
       })
         .then(function (response) {
           if (!response.ok) {
+            localStorage.removeItem('token');
             store.dispatch( {type: 'DEAUTHENTICATE_THE_USER'})
             throw new Error('Token is invalid');
           }
