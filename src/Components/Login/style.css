@@ -6,7 +6,7 @@
 }
 
 .login_form {
-    margin-bottom: 120px !important;
+    margin-bottom: 30px !important;
 }
 
 .login_submit {
@@ -15,4 +15,25 @@
 
 .login_card_logo {
     margin-top: 50px !important;
+}
+
+.with_account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 11pt;
+    margin-bottom: 20px;
+}
+
+.with_account a {
+    margin-left: 6px;
+    border: 1px solid white;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.with_account a:hover {
+    color: black;
+    border: 1px solid black;
 }

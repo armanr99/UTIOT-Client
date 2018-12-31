@@ -109,6 +109,7 @@ export default class Signup extends React.Component {
               />
               <input type="submit" className="signup_submit" value="SIGNUP"/>
           </form>
+          <div className="with_account"><p>Already have an account?</p> <a href="/login">Click here</a></div>
       </div>
     </div> 
     )

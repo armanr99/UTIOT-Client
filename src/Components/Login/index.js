@@ -96,6 +96,7 @@ class Login extends React.Component {
               </div>
               <input type="submit" className="signup_submit login_submit" value="LOGIN"/>
           </form>
+          <div className="with_account"><p>Don't have an account?</p> <a href="/signup">Click here</a></div>
         </div>
       </div> 
       )

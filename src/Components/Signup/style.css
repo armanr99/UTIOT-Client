@@ -8,8 +8,8 @@
 
 .signup_card {
     background-color: #696e83;
-    width: 430px;
-    height: 650px;
+    width: 470px;
+    min-height: 700px;
     border-radius: 8px;
     position: relative;
     display: flex;
@@ -38,7 +38,7 @@
     align-items: center;
     height: 35%;   
     width: 100%;
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .signup_card_logo img {
@@ -51,8 +51,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 50px;
-    margin-top: 10px;
+    margin-top: -10px;
 }
 
 .signup_form input[type="text"], input[type="password"] {
