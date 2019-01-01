@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
 import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
+import { PulseLoader } from 'react-spinners';
 
 function mapStateToProps (state) {
   return {
@@ -17,7 +18,8 @@ class Login extends React.Component {
       super(props);
       this.state = {
         name: '',
-        password: ''
+        password: '',
+        loading: false
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,6 +36,7 @@ class Login extends React.Component {
     }
 
     handleSubmit (event) {
+      this.setState({ loading: true });
       event.preventDefault();
       const data = this.state;
       let self = this;
@@ -41,9 +44,13 @@ class Login extends React.Component {
       fetch('/api/group/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+          name: data.name,
+          password: data.password 
+        })
       })
       .then(function(response) {
+        self.setState({ loading: false });
         if(!response.ok) {
           toast.error('Wrong username or password!');
           throw new Error('login failed'); //what about a error managing system?!
@@ -97,6 +104,12 @@ class Login extends React.Component {
                   <label for="password">Password</label>
               </div>
               <input type="submit" className="signup_submit login_submit" value="LOGIN"/>
+              <PulseLoader
+                sizeUnit={"px"}
+                size={10}
+                color={'#fff'}
+                loading={this.state.loading}
+              />
           </form>
           <div className="with_account"><p>Don't have an account?</p> <a href="/signup">Click here</a></div>
         </div>
