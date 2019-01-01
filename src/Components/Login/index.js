@@ -52,8 +52,8 @@ class Login extends React.Component {
       .then(function(response) {
         self.setState({ loading: false });
         if(!response.ok) {
-          toast.error('Wrong username or password!');
-          throw new Error('login failed'); //what about a error managing system?!
+          toast.error(response.statusText);
+          throw new Error('login failed');
         }
         else {
           toast.success('Login successful!')

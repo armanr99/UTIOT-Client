@@ -55,7 +55,7 @@ class Signup extends React.Component {
     .then(function(response) {
       self.setState({ loading: false })
       if(!response.ok) {
-        toast.error('Signup unsuccessful!');
+        toast.error(response.statusText);
         throw new Error('signup failed');
       }
       else {
