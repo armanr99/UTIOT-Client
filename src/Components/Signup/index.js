@@ -5,15 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKey, faUser, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { Creatable } from 'react-select';
 import { toast } from 'react-toastify';
+import { withRouter } from 'react-router-dom';
 
-export default class Signup extends React.Component {
+class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name : '', 
       password : '', 
       thingspeak: '',
-      members: []
+      members: [],
+      loading: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,21 +37,30 @@ export default class Signup extends React.Component {
   }
 
   handleSubmit (event) {
+    this.setState({ loading: true });
     event.preventDefault();
     const data = this.state;
+    let self = this;
 
     fetch('/api/group/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify({
+        name: data.name,
+        password: data.password,
+        thingspeak: data.thingspeak,
+        members: data.members
+      })
     })
     .then(function(response) {
+      self.setState({ loading: false })
       if(!response.ok) {
         toast.error('Signup unsuccessful!');
-        throw new Error('signup failed'); //what about a error managing system?!
+        throw new Error('signup failed');
       }
       else {
-        toast.success('Signup successful!')
+        toast.success('Signup successful!');
+        self.props.history.push('/login');
       }
     })
     .catch(function (err) {
@@ -115,3 +126,5 @@ export default class Signup extends React.Component {
     )
   }
 }
+
+export default withRouter(Signup);
