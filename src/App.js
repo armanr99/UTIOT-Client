@@ -49,6 +49,14 @@ class App extends Component {
                     <Login />
                   )
                 } />
+                <Route exact path = {'/dashboard'}
+                render={() =>
+                  this.props.authenticated ? (
+                    <Dashboard />
+                  ) : (
+                    <Home />
+                  )
+                } />
               <Route component = {NotFound} />
             </Switch>
           </Auth>
