@@ -56,6 +56,8 @@ class Login extends React.Component {
       .then(function(responseJson) {
         let token = responseJson.data.token;
         localStorage.setItem('token', token);
+        let name = self.state.name;
+        localStorage.setItem('groupName', name);
       }).then(function() {
         self.props.dispatch({ type: 'AUTHENTICATE_THE_USER' });
       })

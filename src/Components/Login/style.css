@@ -31,6 +31,8 @@
     border: 1px solid white;
     padding: 7px;
     border-radius: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 .with_account a:hover {
