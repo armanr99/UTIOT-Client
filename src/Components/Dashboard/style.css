@@ -64,7 +64,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #354052;
 }
 
 .right_group_info {
@@ -75,22 +74,16 @@
     border: 0.5px solid white;
     border-left: 0;
     border-right: 0;
-    /* border-radius: 20px; */
     padding: 25px;
     color: white;
     text-align: center;
-    /* background: #354052; */
 }
 .charts_container {
     display: flex;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
-    /* border: 1px solid black; */
-    /* border-left: 0; */
-    /* border-radius: 20px; */
     min-height: 65vh;
-    background: #354052;
 }
 
 .charts {
@@ -136,8 +129,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border-top: 1px solid rgb(131, 131, 131); */
-    /* position: absolute; */
     width: 100%;
     bottom: 10px;
 }
