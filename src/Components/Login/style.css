@@ -3,6 +3,10 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: url('../../images/background2.png');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .login_form {

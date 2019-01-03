@@ -4,32 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.signup:before, .login:before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  
-    display: block;
     background-image: url('../../images/background2.png');
     background-position: fixed;
     background-repeat: no-repeat;
     background-size:cover;
-    width: 100%;
-    height: 100%;
-  
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
-}
-
-@media only screen and (max-width: 767px) {
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 
 @media only screen and (max-width: 767px) {
