@@ -6,6 +6,7 @@ import { faKey, faUser, faLaptop } from "@fortawesome/free-solid-svg-icons";
 import { Creatable } from 'react-select';
 import { toast } from 'react-toastify';
 import { withRouter } from 'react-router-dom';
+import { PulseLoader } from 'react-spinners';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -119,6 +120,12 @@ class Signup extends React.Component {
                 onChange={this.handleCreateChange}
               />
               <input type="submit" className="signup_submit" value="SIGNUP"/>
+              <PulseLoader
+                sizeUnit={"px"}
+                size={10}
+                color={'#fff'}
+                loading={this.state.loading}
+              />
           </form>
           <div className="with_account"><p>Already have an account?</p> <a href="/login">Click here</a></div>
       </div>

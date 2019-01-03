@@ -140,6 +140,10 @@
     width: 70%;
 }
 
+.signup_submit:focus {
+    outline: 0;
+}
+
 .signup_submit:hover {
     box-shadow: 0 0 40px rgba(0,0,0,.1);
 }
