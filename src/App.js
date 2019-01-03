@@ -21,7 +21,7 @@ function mapStateToProps (state) {
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id="my_app">
         <BrowserRouter>
           <Auth>
             <Switch>

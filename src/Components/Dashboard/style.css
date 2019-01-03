@@ -1,20 +1,16 @@
 .dashboard {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .left_dashboard {
-    min-height: 100vh;
+    min-height: 100%;
     width: 20%;
     border: 1px solid black;
     background: #1b1b1bad;
     display: flex;
-    /* justify-content: space-between; */
     flex-direction: column;
     position: relative;
-    /* border-radius: 20px; */
 }
 
 .dash_logo_holder img {
@@ -28,9 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* border: 1px solid red; */
     color: white;
-    /* border-bottom: 1px solid rgb(131, 131, 131); */
     padding-bottom: 30px;
     min-height: 350px;
 }
@@ -58,20 +52,15 @@
 }
 
 .right_dashboard {
-    height: 100vh;
+    min-height: 100vh;
     width: 80%;
     position: relative;
     width: 80%;
-    /* border: 1px solid black; */
-    /* background: black; */
 }
 
 .right_info {
     width: 100%;
     min-height: 35vh;
-    /* border: 1px solid black; */
-    /* border-left: 0;
-    border-bottom: 0; */
     display: flex;
     justify-content: center;
     align-items: center;
