@@ -47,9 +47,7 @@ class Dashboard extends React.Component {
     render() {
         let members = this.state.members;
         let membersP = members.map((member, i) => (
-            <p key={i}>
-            <p>{member}</p>
-            </p>
+            <p key={i}> {member} </p>
         ));
         let thingspeak = this.state.thingspeak;
         return(

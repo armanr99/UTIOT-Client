@@ -90,7 +90,7 @@ class Login extends React.Component {
                     onChange={this.handleChange}
                     type="text" id="name" 
                     required />
-                  <label for="name">Group Name</label>
+                  <label htmlFor="name">Group Name</label>
               </div>
               <div className="input_container" >
                   <FontAwesomeIcon icon={faKey} />
@@ -101,7 +101,7 @@ class Login extends React.Component {
                     type="password"
                     id="password" 
                     required />
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
               </div>
               <input type="submit" className="signup_submit login_submit" value="LOGIN"/>
               <PulseLoader

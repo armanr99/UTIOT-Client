@@ -86,7 +86,7 @@ class Signup extends React.Component {
                     onChange={this.handleChange}
                     type="text" id="name" 
                     required />
-                  <label for="name">Group Name</label>
+                  <label htmlFor="name">Group Name</label>
               </div>
               <div className="input_container" >
                   <FontAwesomeIcon icon={faKey} />
@@ -97,7 +97,7 @@ class Signup extends React.Component {
                     type="password"
                     id="password" 
                     required />
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
               </div>
               <div className="input_container" >
                   <FontAwesomeIcon icon={faLaptop} />
@@ -108,7 +108,7 @@ class Signup extends React.Component {
                     type="text"
                     id="thingspeak" 
                     required />
-                  <label for="thingspeak">Thingspeak</label>
+                  <label htmlFor="thingspeak">Thingspeak</label>
               </div>
               <Creatable
                 options = {this.state.members}
