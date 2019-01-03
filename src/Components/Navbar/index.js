@@ -19,7 +19,7 @@ handleLogout (event) {
 render() {
     return ( 
     <div className="navbar">
-        <ul className = "navbar">
+        <ul className = "navbar_ul">
             <li className = "logout">
                 <a href="/logout" onClick={e=>this.handleLogout(e)} >logout</a>
             </li>
